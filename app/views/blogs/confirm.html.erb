@@ -1,0 +1,9 @@
+<h3>以下の内容で投稿する</h3>
+<%= form_with(model: @blog, local: true) do |form| %>
+<%= form.hidden_field :comment %>
+
+
+  <p>投稿内容:<%= @blog.comment %></p>
+  <%= form.submit '投稿する'%>
+  <%= form.submit "戻る", name: 'back' %>
+<% end %>

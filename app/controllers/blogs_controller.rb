@@ -24,7 +24,7 @@ class BlogsController < ApplicationController
   # POST /blogs
   # POST /blogs.json
   def create
-    @blog = Blog.new(blog_params)
+    @blog = current_user.blogs.build(blog_params)
       if params[:back]
         render :new
       else
@@ -36,7 +36,7 @@ class BlogsController < ApplicationController
       end
   end
   def confirm
-    @blog = Blog.new(blog_params)
+    @blog = current_user.blogs.build(blog_params)
     render :new if @blog.invalid?
   end
   # PATCH/PUT /blogs/1

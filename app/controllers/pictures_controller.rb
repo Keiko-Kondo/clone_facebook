@@ -42,6 +42,7 @@ class PicturesController < ApplicationController
   end
   def confirm
     @picture = Picture.new(picture_params)
+    render :new if @picture.invalid?
   end
 
   # PATCH/PUT /pictures/1
@@ -58,6 +59,8 @@ class PicturesController < ApplicationController
     end
   end
 
+
+
   # DELETE /pictures/1
   # DELETE /pictures/1.json
   def destroy
@@ -73,6 +76,7 @@ class PicturesController < ApplicationController
     def set_picture
       @picture = Picture.find(params[:id])
     end
+
 
     # Only allow a list of trusted parameters through.
     def picture_params

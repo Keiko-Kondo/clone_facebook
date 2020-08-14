@@ -1,17 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Pictures</h1>
+<h3>これまでの画像投稿一覧</h3>
 
 <table>
-  <thead>
-    <tr>
-      <th>Image</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
   <tbody>
-      <%= link_to '今なにしてる？', new_blog_path %>
     <% @pictures.each do |picture| %>
       <tr>
         <td><%= picture.image %></td>

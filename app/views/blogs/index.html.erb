@@ -1,19 +1,14 @@
-<p id="notice"><%= notice %></p>
-<h1>Blogs</h1>
-
 <table>
   <thead>
     <tr>
       <th colspan="3"></th>
     </tr>
   </thead>
+  <%= link_to 'ブログの投稿', new_blog_path %>
+  <%= link_to "写真の投稿", new_picture_path %>
 
   <tbody>
-    <%= link_to '今なにしてる？', new_blog_path %>
-    <br>
-    <%= link_to "写真の投稿", new_picture_path %>
-    <br>
-    <br>
+    <h3>これまでのブログ投稿一覧</h3>
     <% @blogs.each do |blog| %>
       <tr>
         <td><%= blog.comment %></td>

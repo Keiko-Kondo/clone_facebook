@@ -8,18 +8,16 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
     <% flash.each do |key, value| %>
       <%= content_tag(:div, value, class: "#{key}") %>
     <% end %>
-
 <% if logged_in? %>
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
     <li class="breadcrumb-item"><%= link_to "Home", user_path(current_user.id)%></li>
     <li class="breadcrumb-item active" aria-current="page"><%= link_to "Logout", session_path(current_user.id), method: :delete %></li>
-    <p class="user_name" >ユーザー名：<%= current_user.name %></p>
+    <p class="user_name">ユーザー名：<%= current_user.name %></p>
   </ol>
 </nav>
 <% else %>
@@ -30,7 +28,6 @@
 </ol>
 </nav>
 <% end %>
-
     <%= yield %>
   </body>
 </html>

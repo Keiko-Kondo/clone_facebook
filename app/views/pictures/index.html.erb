@@ -1,7 +1,5 @@
 <p id="notice"><%= notice %></p>
-
 <h3>これまでの画像投稿一覧</h3>
-
 <table>
   <tbody>
     <% @pictures.each do |picture| %>
@@ -14,7 +12,5 @@
     <% end %>
   </tbody>
 </table>
-
 <br>
-
 <%= link_to 'New Picture', new_picture_path %>

@@ -4,9 +4,8 @@
       <th colspan="3"></th>
     </tr>
   </thead>
-  <%= link_to 'ブログの投稿', new_blog_path %>
-  <%= link_to "写真の投稿", new_picture_path %>
-
+  <%= link_to 'ブログの投稿', new_blog_path, class: 'alert alert-info' %>
+  <%= link_to "写真の投稿", new_picture_path, class: 'alert alert-info' %>
   <tbody>
     <h3>これまでのブログ投稿一覧</h3>
     <% @blogs.each do |blog| %>
